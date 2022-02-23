@@ -24,10 +24,10 @@ class WordInput(jp.InputChangeOnly):
 
 class Watchcard(jp.Div):
     def __init__(self, **kwargs):
-        self.citem = None
         kwargs['class_'] = 'w-2/3 bg-white mt-20  rounded-lg shadow p-12'
         kwargs['style'] = 'min-height: 20rem;'
         super().__init__(**kwargs)
+
         input_ = WordInput(length=10)
         button = jp.Button(
             class_='text-5xl px-6 m-2 text-lg text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-80',
@@ -38,7 +38,7 @@ class Watchcard(jp.Div):
 
     async def click(self, _):
         if self.input.value:
-            self.page.watch = self.input.value
+            # self.page.watch = self.input.value
             crawler = SubTitleCrawler(self.input.value)
             crawler.init()
             item = self.page.name_dict['item']
