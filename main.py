@@ -1,9 +1,7 @@
-import justpy as jp
+import jp
 import uvicorn
 import re
 import random
-from jp_utils.utils import justpy_parser_to_wp
-
 from crawler import SubTitleCrawler
 
 
@@ -130,7 +128,7 @@ class Card(jp.Div):
 
 @jp.SetRoute('/')
 async def demo():
-    wp = justpy_parser_to_wp("""
+    wp = jp.justpy_parser_to_wp("""
     <div class="bg-red-200 h-screen">
         <div class="flex flex-col items-center" name="item">
         <WatchCard></WatchCard>
